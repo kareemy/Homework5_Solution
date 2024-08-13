@@ -1,0 +1,32 @@
+﻿@page
+@model Homework5_Solution.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    int count = 0;
+}
+
+<h2 class="display-1 text-center">ThoughtTronix Product Catalog</h2>
+<hr>
+<div class="row mb-2 justify-content-center">
+@foreach (var item in Model.Products)
+{
+    if (count == 2)
+    {
+        @:</div>
+        @:<div class="row mb-2 justify-content-center">
+        count = 0;
+    }
+
+    <div class="col-md-auto">
+        <div class="card" style="width: 24rem;">
+            <img src="@item.ImageURL" class="card-img-top" alt="@item.Name Product">
+            <div class="card-body">
+                <h2 class="card-title">@Html.DisplayFor(model => item.Name)</h2>
+                <p class="card-text">@Html.DisplayFor(model => item.Description)</p>
+                <hr class="my-0">
+                <p class="card-text fs-2"><strong>@Html.DisplayFor(model => item.Price)</strong><a asp-page="./BuyNow" asp-route-id="@item.ProductID" class="btn btn-primary float-end my-2">Buy Now</a></p>
+            </div>
+        </div>
+    </div>
+    count = count + 1;
+}

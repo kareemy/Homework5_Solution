@@ -1,0 +1,48 @@
+@page
+@model Homework5_Solution.Pages.BuyNowModel
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+<h1>Shopping Cart</h1>
+
+<div class="row mt-5 p-2 border border-dark rounded">
+    <div class="col-3 align-self-center">
+        <img src="@Model.Product.ImageURL" class="img-fluid">
+    </div>
+    <div class="col-6 align-self-center">
+        <p><strong>Product:</strong> @Model.Product.Name</p>
+        <p><strong>Description:</strong> @Model.Product.Description</p>
+        <hr>
+        <p class="text-secondary">Estimated Delivery: @Html.DisplayFor(model => Model.StartDeliveryDate) - @Html.DisplayFor(model => Model.EndDeliveryDate)</p>
+    </div>
+    <div class="col-3 align-self-center">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Shopping Cart Summary</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-sm table-borderless">
+                    <tr>
+                        <td>MindSync</td>
+                        <td>@Html.DisplayFor(model => Model.Product.Price)</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>@Html.DisplayFor(model => Model.Shipping)</td>
+                    </tr>
+                    <tr>
+                        <td>Tax</td>
+                        <td>@Html.DisplayFor(model => Model.Tax)</td>
+                    </tr>
+                    <tr class="border-top">
+                        <td><strong>Total</strong></td>
+                        <td><strong>@Html.DisplayFor(model => Model.Total)</strong></td>
+                    </tr>
+                </table>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary">PLACE ORDER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
