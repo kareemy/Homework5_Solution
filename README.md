@@ -9,7 +9,7 @@ The goal of this homework is to practice building an ASP.NET Core + EF Core web 
 ## Task 1: Combine ASP.NET Core + EF Core by following the 8 steps
 
 1. Follow the 8 steps to combine ASP.NET Core and EF Core. Start with step 1, `dotnet new webapp`.
-2. Your Entity Class will model patients and should look like this:
+2. Your Entity Class will model products and should look like this:
 
   | Property Name | Data Validation Rules |
   | ------------- | --------------------- |
